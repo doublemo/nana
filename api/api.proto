@@ -46,6 +46,45 @@ message AccountDevice {
     map<string, string> vars = 2;
 }
 
+// Authenticate against the server with a refresh token.
+message SessionRefreshRequest {
+  // Refresh token.
+  string token = 1;
+  // Extra information that will be bundled in the session token.
+  map<string, string> vars = 2;
+}
+
+
+// Log out a session, invalidate a refresh token, or log out all sessions/refresh tokens for a user.
+message SessionLogoutRequest {
+  // Session token to log out.
+  string token = 1;
+  // Refresh token to invalidate.
+  string refresh_token = 2
+  ;
+}
+
+// Execute an Lua function on the server.
+message Rpc {
+  // The identifier of the function.
+  string id = 1;
+  // The payload of the function which must be a JSON object.
+  string payload = 2;
+  // The authentication key used when executed as a non-client HTTP request.
+  string http_key = 3;
+}
+
+// A user's session used to authenticate messages.
+message Session {
+  // True if the corresponding account was just created, false otherwise.
+  bool created = 1;
+  // Authentication credentials.
+  string token = 2;
+  // Refresh token that can be used for session token renewal.
+  string refresh_token = 3;
+}
+
+
 // A user in the server.
 message User {
     // The id of the user's account.
