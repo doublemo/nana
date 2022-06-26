@@ -58,6 +58,9 @@ const (
 	RUNTIME_CTX_CLIENT_PORT = "client_port"
 )
 
+// 定义模块入口名称
+const INIT_MODULE_FUNC_NAME = "InitModule"
+
 // 运行时初始函数
 type InitModuleFn func(context.Context, Logger, *sql.DB, Module, Initializer) error
 
