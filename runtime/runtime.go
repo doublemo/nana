@@ -14,6 +14,11 @@
 
 package runtime
 
+import (
+	"context"
+	"database/sql"
+)
+
 // 定义运行时常量
 const (
 	// All available environmental variables made available to the runtime environment.
@@ -52,5 +57,8 @@ const (
 	// The port number of the client making the request.
 	RUNTIME_CTX_CLIENT_PORT = "client_port"
 )
+
+// 运行时初始函数
+type InitModuleFn func(context.Context, Logger, *sql.DB, Module, Initializer) error
 
 type Initializer interface{}
