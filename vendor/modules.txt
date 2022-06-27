@@ -31,4 +31,5 @@ google.golang.org/protobuf/runtime/protoiface
 google.golang.org/protobuf/runtime/protoimpl
 google.golang.org/protobuf/types/descriptorpb
 google.golang.org/protobuf/types/known/timestamppb
+google.golang.org/protobuf/types/known/wrapperspb
 google.golang.org/protobuf/types/pluginpb

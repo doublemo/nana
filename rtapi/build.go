@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package runtime
+package rtapi
 
-type Module interface {
-	AuthenticateEmail()
-}
+//go:generate protoc -I.. -I. --go_out=. --go_opt=paths=source_relative realtime.proto
